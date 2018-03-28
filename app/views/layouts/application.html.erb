@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rubypedia</title>
+    <%= csrf_meta_tags %>
+    <link rel="icon" href="https://www.rubypedia.com/resources/images/favicon.png">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=greek" rel="stylesheet">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+	    body.modal-open .background-container{
+	        -webkit-filter: blur(4px);
+	        -moz-filter: blur(4px);
+	        -o-filter: blur(4px);
+	        -ms-filter: blur(4px);
+	        filter: blur(4px);
+	        filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
+	        filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+	    }
+	    .popover {
+	        font-family: Roboto;
+	        font-weight: 300;
+	        text-align: center;
+	    }
+	</style>
+	<style>
+		 /* media screen */
+		  @media screen and (max-width: 480px){
+		    
+		        .passion {
+			    display: none;
+			    margin-bottom:20px;
+		        }
+		  }
+	/* end media screen */
+	</style>
+  </head>
+
+<body style="background-color: #F3F3F3">
+<div id="" class="background-container">
+<nav class="navbar-tube navbar-fixed-top navbar-default" style="background-color: #B71C1C;border-color: ##B71C1C;border-bottom: 3px solid #fff">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="margin-top: 15px;border-color: white;">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar" style="background-color: #fff"></span>
+                <span class="icon-bar" style="background-color: #fff"></span>
+                <span class="icon-bar" style="background-color: #fff"></span>
+            </button>
+            <a class="tube-logo-navbar" href="<%= root_path %>">
+                <img class="tube-logo" src="https://www.rubypedia.com/resources/images/logo-jumbroton.png" alt=""/>
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" style="margin-top: 8px;color: white;font-size: 16px;font-weight: 500">
+                <li ><a href="/blog/" style="color: #fff"><i class="fa fa-book"></i> BLOG</a></li>
+                <li ><a href="/kategori/" style="color: #fff"><i class="fa fa-folder"></i> KATEGORI</a></li>
+                <li ><a href="/screencast/" style="color: #fff"><i class="fa fa-youtube-play"></i> SCREENCAST</a></li>
+				<li ><a href="/series/" style="color: #fff"><i class="fa fa-list-ul"></i> SERIES </a></li>
+				<li><a href="/stuck/" style="color: #fff"><i class="fa fa-bug"></i> STUCK <sup style="margin-left:3px;background: #e23337;color: #fff;font-size: 9px;top: -10px;padding: 3px;-webkit-border-radius: 2px;-moz-border-radius: 2px;-ms-border-radius: 2px;-o-border-radius: 2px;border-radius: 2px;">NEW</sup> </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0px">
+            	<a class="btn btn-default btn-md" style="margin-top: 15px;border-radius: 50px;margin-left: 5px" href="/sign-in/"><i class="fa fa-sign-in"></i> SIGN IN</a>
+            	<a class="btn btn-success btn-md" style="margin-top: 15px;border-radius: 50px;margin-left: 5px" href="/sign-up/"><i class="fa fa-user-plus"></i>  SIGN UP</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <%= yield %>
+
+
+<div class="footer" style="border-top: 5px solid #B71C1C;">
+
+    <div class="footer-top" style="border-bottom: 1px solid rgba(0,0,0,.12);">
+
+        <div class="container">
+            <div class="row" style="margin-bottom: 10px">
+                <div class="col-md-5">
+                    <div class="item-inner">
+                        <!--<img class="item-icon" src="<?php echo base_url() ?>resources/images/footer/open-book.png" style="width: 50px" alt="">-->
+                        <h4 class="item-title" style="text-transform: uppercase"> Tentang</h4>
+                        <div class="divider-rubypedia" style="width: 40px;height: 2px;background-color: #B71C1C;margin-bottom: 7px"></div>
+                        <p style="font-size: 17px;line-height:27px">RubyPedia.com adalah situs yang menyediakan tutorial & screencast pemrogramman ruby dengan bahasa indonesia.</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="item-inner">
+                        <!--<img class="item-icon" src="<?php echo base_url() ?>resources/images/footer/exam.png" style="width: 50px" alt="">-->
+                        <h4 class="item-title" style="text-transform: uppercase">Resources</h4>
+                        <div class="divider-rubypedia" style="width: 40px;height: 2px;background-color: #B71C1C;margin-bottom: 7px"></div>
+                        <p>
+                        <ul style="padding-left: 0px;font-size: 15px">
+                            <li style="list-style: none;margin-bottom:5px"><a style="text-decoration: none;" href="/blog/">Blog</a></li>
+                            <li style="list-style: none;margin-bottom:5px"><a style="text-decoration: none;" href="/series/">Series</a></li>
+                            <li style="list-style: none;margin-bottom:5px"><a style="text-decoration: none;" href="/screencast/">Screencast</a></li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                                <div class="col-md-2">
+                    <div class="item-inner">
+                        <!--<img class="item-icon" src="<?php echo base_url() ?>resources/images/footer/exam.png" style="width: 50px" alt="">-->
+                        <h4 class="item-title" style="text-transform: uppercase">Informasi</h4>
+                        <div class="divider-rubypedia" style="width: 40px;height: 2px;background-color: #B71C1C;margin-bottom: 7px"></div>
+                        <p>
+                        <ul style="padding-left: 0px;font-size: 15px">
+                            <li style="list-style: none;margin-bottom:5px"><a style="text-decoration: none;" href="/about/">Tentang</a></li>
+                            <li style="list-style: none;margin-bottom:5px"><a style="text-decoration: none;" href="/terms/">Syarat Layanan</a></li>
+                            <li style="list-style: none;margin-bottom:5px"><a style="text-decoration: none;" href="/policies/">Kebijakan Privasi</a></li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="item-inner">
+                        <!--<img class="item-icon" src="<?php echo base_url() ?>resources/images/footer/diploma.png" style="width: 50px" alt="">-->
+                        <h4 class="item-title" style="text-transform: uppercase">Kontak</h4>
+                        <div class="divider-rubypedia" style="width: 40px;height: 2px;background-color: #B71C1C;margin-bottom: 7px"></div>
+                        <p style="font-size: 15px;line-height:27px"><i class="fa fa-map-marker"></i> Ds. Gedang Alas, RT/RW : 008/002, Gajah, Demak</p>
+                        <p style="font-size: 15px"><i class="fa fa-envelope"></i> rubypedia.com@gmail.com</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <div class="container" style="height: 20px;padding: 3rem 0">
+            <div class="row">
+                <div class="col-md-6">
+                    © Ruby Pedia 2017. Hak Cipta Dilindungi
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-menu" style="text-align: right;">
+                        <div class="menu-footer-menu-container">
+                            <a class="social" href="https://www.facebook.com/rubypedia" style="margin-right: .5rem!important;">
+                                <img src="https://www.rubypedia.com/resources/images/icons/facebook-with-circle.svg" width="32" height="32" alt="Facebook" />
+                            </a>
+                            <a class="social" href="https://www.twitter.com/rubypedia" style="margin-right: .5rem!important;">
+                                <img src="https://www.rubypedia.com/resources/images/icons/twitter-with-circle.svg" width="32" height="32" alt="Twitter" />
+                            </a>
+                            <a class="social" href="https://t.me/rubypedia" style="margin-right: .5rem!important;">
+                                <img src="https://www.rubypedia.com/resources/images/icons/telegram-with-circle.svg" width="32" height="32" alt="Telegram" />
+                            </a>
+                            <a class="social" href="https://instagram.com/rubypedia.id" style="margin-right: .5rem!important;">
+                                <img src="https://www.rubypedia.com/resources/images/icons/instagram-with-circle.svg" width="32" height="32" alt="Instagram" />
+                            </a>
+                            <a class="social" href="https://www.youtube.com/channel/UCbbDCMKPi4droWduI8twQTA" style="margin-right: .5rem!important;">
+                                <img src="https://www.rubypedia.com/resources/images/icons/youtube-with-circle.svg" width="32" height="32" alt="Youtube" />
+                            </a>
+                            <a class="social" href="https://plus.google.com/u/1/104900188585457955616">
+                                <img src="https://www.rubypedia.com/resources/images/icons/google+-with-circle.svg" width="32" height="32" alt="Google+" />
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="padding-top: 180px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel" style="font-family: Roboto;font-weight: 300"><i class="fa fa-lock"></i> Masuk Akun Ruby Pedia</h4>
+            </div>
+            <div class="modal-body" style="background-color: #F3F3F3;border-radius: 5px">
+                <div class="text-center" style="padding-bottom: 20px">
+                  <a  href="/sign-in/" class="btn btn-rubypedia btn-lg" style="border-radius: 25px;background-color: white;border-color: white;color: #464646;-webkit-box-shadow: 0 1px 1px 0 rgba(159,167,194,0.6);-moz-box-shadow: 0 1px 1px 0 rgba(159,167,194,0.6);box-shadow: 0 1px 1px 0 rgba(159,167,194,0.6);margin-top: 20px"><i class="fa fa-sign-in"></i> Masuk </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" style="padding-top: 50px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel" style="font-family: Roboto;font-weight: 300"><i class="fa fa-play"></i> Tentang RubyPedia.com</h4>
+            </div>
+            <div class="modal-body" style="background-color: #F3F3F3;border-radius: 5px;padding: 0px">
+                <div class="text-center">
+                    <iframe style="width: 100%;height: 400px" src="https://www.youtube.com/embed/il74p0mowUg?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1&autoplay=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+	$('.btn-load').on('click', function() {
+        var $this = $(this);
+      $this.button('loading');
+        setTimeout(function() {
+           $this.button('reset');
+       }, 2000);
+});
+</script>    
+</body>
+</html>
