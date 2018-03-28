@@ -34,7 +34,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem "seed_dump"
 gem "font-awesome-rails"
 gem "nprogress-rails"
-gem "recaptcha", require: "recaptcha/rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
