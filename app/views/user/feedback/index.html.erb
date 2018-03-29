@@ -1,0 +1,28 @@
+<section class="blog" style="margin-top: 80px">
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col-md-3">
+        <% content_for(:sidebar) do %>
+          <%= render :partial => "layouts/sidebar" %>
+        <% end %>
+
+        <%= yield :sidebar %>
+
+      </div>
+
+
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading" style="background-color: #b71d1d;border-bottom: #841010 4px solid;font-family: Roboto;font-weight: 300;font-size: 17px;color: white;text-transform: uppercase;"><i class="fa fa-bell"></i> FEEDBACK</div>
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
