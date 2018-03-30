@@ -34,7 +34,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem "seed_dump"
 gem "font-awesome-rails"
 gem "nprogress-rails"
-
+gem "friendly_id", "~> 5.1.0"
+gem "paperclip", "~> 6.0.0"
+gem 'kaminari'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

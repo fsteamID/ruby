@@ -8,7 +8,7 @@ class UserSignInController < ApplicationController
     user = User.find_by(alamat_email:login_params[:email])
     if user && user.authenticate(login_params[:password])
       session[:user_id] = user.id
-      #session[:role]    = user.role
+      # session[:role]    = user.role
       redirect_to '/user/dashboard/'
     else
       flash[:danger] = 'Alamat Email atau Password Anda salah.'

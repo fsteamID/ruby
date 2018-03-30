@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nama_kategori: MyString
+  slug_kategori: MyString
+  gambar: MyString
+  descriptions: MyText
+
+two:
+  nama_kategori: MyString
+  slug_kategori: MyString
+  gambar: MyString
+  descriptions: MyText
